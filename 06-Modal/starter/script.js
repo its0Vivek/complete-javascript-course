@@ -18,6 +18,14 @@ const closeModel = function () {
     overlay.classList.add('hidden')
 }
 
-btnCloseModal.addEventListener('click', closeModel)
+btnCloseModal.addEventListener('click', closeModel);
+overlay.addEventListener('click', closeModel);
 
-overlay.addEventListener('click', closeModel)
+document.addEventListener('keydown', function (ev) {
+    if ((ev.key === 'Escape') && (!modal.classList.contains('hidden'))) {
+        closeModel()
+
+    }
+})
+
+
